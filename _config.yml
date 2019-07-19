@@ -16,7 +16,7 @@ cayman-blog:
 theme: # leave it empty
 
 # social
-author: lorepirri
+author: lihui1314
 image: /thumbnail-jumbo.png
 twitter:
   username: lihui
@@ -25,5 +25,3 @@ plugins:
   - jekyll-target-blank
 
 target-blank:
-    rel: nofollow
-
