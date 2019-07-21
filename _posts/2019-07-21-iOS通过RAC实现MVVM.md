@@ -21,7 +21,7 @@ tagline: "通过RAC可以实现MVVM，当然实现MVVM不一定非得用RAC，�
 
 
 
-`MyCell`用来展示数据，`MyCellModel是用来与Cell关联的model。MyCell中绑定代码实现如下：`
+`MyCell`用来展示数据，`MyCellModel`是用来与Cell关联的model。`MyCell`中绑定代码实现如下：`
 
 ```
 -(void)lh_cellAssociatedModel:(MyCellModel *)model{
