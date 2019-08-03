@@ -35,12 +35,12 @@ SDWebImage 梳理
    5.2、```[self.runningOperations addObject:operation];```下载管理类记录正在下载的任务 （```SDWebImageCombinedOperation```）（下载完成以后任务会被删除）；
    5.3、通过url去缓存查找（先查缓存 再查磁盘）
    5.4、缓存中没有找到需要去网络下载
-          *  ``` [self.URLOperations setObject:operation forKey:url];```下载管理类记录正在下载的任务（下载完成以后任务会被删除）
-          *  在```SDWebImageDownloaderOperation```对象中记录回调Block（包括进度block 和完成blok）
-          *  ```[self.downloadQueue addOperation:operation];```把下载任务加入队列，默认情况下最大并发是6
+   * ``` [self.URLOperations setObject:operation forKey:url];```下载管理类记录正在下载的任务（下载完成以后任务会被删除）
+   * 在```SDWebImageDownloaderOperation```对象中记录回调Block（包括进度block 和完成blok）
+   * ```[self.downloadQueue addOperation:operation];```把下载任务加入队列，默认情况下最大并发是6
 
    5 .5、图片解码（分两种，下载过程中解码(先不提)、下载完成后解码）；
-         * 当图片数据全部下载完后。会进行图片解码，图片解码是在一个异步串行队列中进行的。 
+   * 当图片数据全部下载完后。会进行图片解码，图片解码是在一个异步串行队列中进行的。 
 
 
 
