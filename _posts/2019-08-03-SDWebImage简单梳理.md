@@ -1,4 +1,4 @@
-SDWebImage y一点梳理
+SDWebImage 梳理
 
 ### 1.cancel 取消正在下载的任务。
 
