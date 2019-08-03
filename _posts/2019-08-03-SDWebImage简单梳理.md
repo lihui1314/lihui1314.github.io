@@ -1,8 +1,6 @@
-SDWebImage
+SDWebImage y一点梳理
 
-一 下载
-
-##### 1.cancel 取消正在下载的任务。
+### 1.cancel 取消正在下载的任务。
 
 当新图片被下载时，第一步的判断是是否有正在下载的任务，如果有的话取消当前下载任务并删除原先与view绑定的operation。
 
@@ -14,21 +12,21 @@ SDWebImage
 
 1.4、 移除在下载管理类中记录的正在下载的operation(```SDWebImageDownloaderOperation```)。
 
-1.5、 移除下载管理类中记录的任务（````SDWebImageCombinedOperation```);
+1.5、 移除下载管理类中记录的任务（```SDWebImageCombinedOperation```);
 
 1.6、移除与View 关联的任务（```SDWebImageCombinedOperation```）
 
-##### 2.placeholder
+### 2.placeholder
 
 如果设置了占位图，给ImageView 设置占位图。
 
-##### 3.progress
+### 3.progress
 
 重置进度，设置进度回调block。combinedProgressBlock
 
-##### 4.和view关联正在下载的任务（```SDWebImageCombinedOperation```）
+### 4.和view关联正在下载的任务（```SDWebImageCombinedOperation```）
 
-##### 5.download
+### 5.download
 
  5.1、验证url
 
