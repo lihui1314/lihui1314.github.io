@@ -5,19 +5,19 @@ title: "SDWebImage 梳理"
 SDWebImage 梳理
 
 ### 1.cancel 取消正在下载的任务。
-+ 当新图片被下载时，第一步的判断是是否有正在下载的任务，如果有的话取消当前下载任务并删除原先与view绑定的operation。
+1. 当新图片被下载时，第一步的判断是是否有正在下载的任务，如果有的话取消当前下载任务并删除原先与view绑定的operation。
 
-+ 如果是在正在从缓存中读取，取消读取的operation，若果是从是下载的任务，取消下载的operation。
+2. 如果是在正在从缓存中读取，取消读取的operation，若果是从是下载的任务，取消下载的operation。
 
-+ 移除进行中的回调block (进度Blok 以及完成Bock)
+3. 移除进行中的回调block (进度Blok 以及完成Bock)
 
-+ 取消下载中任务(```SDWebImageDownloaderOperation```)；
+4. 取消下载中任务(```SDWebImageDownloaderOperation```)；
 
-+ 移除在下载管理类中记录的正在下载的operation(```SDWebImageDownloaderOperation```)。
+5. 移除在下载管理类中记录的正在下载的operation(```SDWebImageDownloaderOperation```)。
 
-+ 移除下载管理类中记录的任务（```SDWebImageCombinedOperation```);
+6. 移除下载管理类中记录的任务（```SDWebImageCombinedOperation```);
 
-+ 移除与View 关联的任务（```SDWebImageCombinedOperation```）
+7. 移除与View 关联的任务（```SDWebImageCombinedOperation```）
 
 ### 2.placeholder
 
