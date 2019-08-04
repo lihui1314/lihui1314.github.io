@@ -8,6 +8,10 @@
 layout: home
 ---
 
-芦叶满汀洲，寒沙带浅流。二十年重过南楼。柳下系船犹未稳，能几日，又中秋。
+Cayman Blog Theme is a clean, responsive blogging theme for Jekyll. It is inspired by the Cayman Theme for Github Pages, which can be greatly used for single projects but not as blogging platform.
 
-黄鹤断矶头，故人曾到否？旧江山浑是新愁。欲买桂花同载酒，终不似，少年游。
+This theme has instead all you need to start today blogging with Jekyll, and no effort: pages, posts, few social buttons. Try loading this on mobile too.
+
+Have a look at the Github page for more information.
+
+You find this descriptive text in the `index.md` file, so you can change it, or remove it completely, according to your needs.

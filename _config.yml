@@ -1,9 +1,9 @@
-title: 浅月堂前
-description: 晚来天欲雪，能饮一杯无
-show_downloads: false
+title: Cayman Blog Theme
+description: Cayman Blog Theme is a clean, responsive blogging theme for Jekyll and Gitlab/GitHub Pages.
+show_downloads: true
 
-baseurl: 
-url: 
+baseurl: "/cayman-blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "https://lorepirri.github.io" # change this to the base hostname & protocol for your site
 
 
 google_analytics:
@@ -16,12 +16,15 @@ cayman-blog:
 theme: # leave it empty
 
 # social
-author: lihui1314
+author: lorepirri
 image: /thumbnail-jumbo.png
 twitter:
-  username: lihui
+  username: lorepirri
 
 plugins:
   - jekyll-target-blank
 
 target-blank:
+    rel: nofollow
+
+header_page_refs: ['now', 'about', 'contact']
