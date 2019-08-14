@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "SDWebImage 图片解码一"
+excerpt: "根据完整图片数据进行解码"
 ---
 ```\- (nullable UIImage *)sd_decompressedImageWithImage:(nullable UIImage *)image {
 - (nullable UIImage *)sd_decompressedImageWithImage:(nullable UIImage *)image {
