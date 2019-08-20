@@ -4,15 +4,13 @@ title: "SDWebImage 图片解码一"
 excerpt: "根据完整图片数据进行解码"
 ---
 ```
-- (nullable UIImage *)sd_decompressedImageWithImage:(nullable UIImage *)image {
-    if (![[self class] shouldDecodeImage:image]) {
+ if (![[self class] shouldDecodeImage:image]) {
         return image;
     }
     
     // autorelease the bitmap context and all vars to help system to free memory when there are memory warning.
     // on iOS7, do not forget to call [[SDImageCache sharedImageCache] clearMemory];
     @autoreleasepool{
-        
         CGImageRef imageRef = image.CGImage;
         // device color space
         CGColorSpaceRef colorspaceRef = SDCGColorSpaceGetDeviceRGB();//获取需要创建色彩空间格式
@@ -21,7 +19,7 @@ excerpt: "根据完整图片数据进行解码"
         CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
         bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;//kCGImageAlphaPremultipliedFirst预乘alpha值 采用的存储格式是ARGB
         kCGImageAlphaNoneSkipFirst 采用的存储格式是XRGB。XRGB格式是忽略alpha值的。但是还用一个字节占位，这样做的目的是为了让一个像素保持32位，便于运算。
-        
+
         size_t width = CGImageGetWidth(imageRef);
         size_t height = CGImageGetHeight(imageRef);
         
@@ -50,6 +48,8 @@ excerpt: "根据完整图片数据进行解码"
     }
 }
 ```
+
+
 
 为什么没有直接用   ```imageWithData```返回的image？
 
