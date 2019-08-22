@@ -3,7 +3,7 @@ layout: post
 title: "NSInvocation调用Block"
 excerpt: "Block的本质是OC对象，可以通过NSInvocation调用Block"
 ---
-##### 先说一下```NSInvocation ```：我们可以通过NSInvocation调用某个对象的方法。
+### 先说一下```NSInvocation ```：我们可以通过NSInvocation调用某个对象的方法。
 
 简单代码示例如下：
 
@@ -34,9 +34,9 @@ excerpt: "Block的本质是OC对象，可以通过NSInvocation调用Block"
 
 我们可以通过设置target、方法签名、selector,实现调用其他对象的方法。如果方法带参数可以通过设置argument，来传递参数值。有一点需要注意，设置argument的下标是从2开始的。默认0是self,1是_cmd。
 
-如果有返回值，可以通过```getReturnValue:```方法获取到返回值，不过有一点需要注意。如果返回的是OC对象类型，需要加```__autoreleasing``` 防止过度释放或者通过```__bridge```来转化为OC对象。原因是，在arc模式下，getReturnValue：仅仅是从invocation的返回值拷贝到指定的内存地址，如果返回值是一个NSObject对象的话，是没有处理做到内存管理。
+如果有返回值，可以通过```getReturnValue:```方法获取到返回值，不过有一点需要注意。如果返回的是OC对象类型，需要加```__autoreleasing``` 防止过度释放或者通过```__bridge```来转化为OC对象。原因是，在arc模式下，getReturnValue：仅仅是从invocation获取到的一个指向将返回值拷贝到指定地址的指针（非OC对象类型指针）。如果返回值是一个NSObject对象的话，是没有处理内存管理的。
 
-##### NSInvocation调用Block
+###  NSInvocation调用Block
 
 上面实现了关于NSInvocation对其他对象方法的调用，那么如何实现对block的调用呢，首先我们block到底是什么，block的本质就是oc对象。
 
