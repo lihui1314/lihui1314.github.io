@@ -109,7 +109,7 @@ void *desc = layout->descriptor;
     };
 ```
 
-其实当block被copy到堆区的时候，机构体中增加了copy 和dispose函数作为结构体的成员变量，所以再取signature的时候做了如下操作```	desc += 2 * sizeof(void *);```。即指针多偏移了```2 * sizeof(void *)```。
+其实当block被copy到堆区的时候，结构体中增加了copy 和dispose函数作为结构体的成员变量，所以再取signature的时候做了如下操作```	desc += 2 * sizeof(void *);```。即指针多偏移了```2 * sizeof(void *)```。
 
 获取block签名后进行调用：
 
