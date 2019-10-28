@@ -1,11 +1,13 @@
+---
 layout: post
 title: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor参数类型并传出所需参数"
 excerpt: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor参数类型并传出所需参数"
+---
 ###GCD实现支持repeat、repeatCount的定时器，自动识别seletor类型并传出所需参数
-
 ###核心代码如下：
 
-```-(void)lh_setGCDtimerWithTimer:(dispatch_source_t)timer interval:(uint64_t)interval repeat:(BOOL)repeat repeatCount:(NSInteger)count sel:(SEL)sel{
+```
+-(void)lh_setGCDtimerWithTimer:(dispatch_source_t)timer interval:(uint64_t)interval repeat:(BOOL)repeat repeatCount:(NSInteger)count sel:(SEL)sel{
     if (timer == nil) {
         return;
     }
