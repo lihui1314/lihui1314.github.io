@@ -1,6 +1,6 @@
 layout: post
-title: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor类型并传出所需参数"
-excerpt: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor类型并传出所需参数"
+title: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor参数类型并传出所需参数"
+excerpt: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor参数类型并传出所需参数"
 ###GCD实现支持repeat、repeatCount的定时器，自动识别seletor类型并传出所需参数
 
 ###核心代码如下：
