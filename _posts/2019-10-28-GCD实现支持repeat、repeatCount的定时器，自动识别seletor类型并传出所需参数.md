@@ -16,8 +16,10 @@ excerpt: "GCD实现支持设置repeat和repeat次数的定时器，能自动识�
     __weak typeof(timer)wektimer = timer;
     __weak typeof(self)wekSelf = self;
     dispatch_source_set_event_handler(timer, ^{
-        if (count - i == 0) {
-            dispatch_cancel(wektimer);
+        if (count > 0) {
+            if (count - i == 0) {
+                dispatch_cancel(wektimer);
+            }
         }
         NSMethodSignature *methodSignature = [[wekSelf class] instanceMethodSignatureForSelector:sel];
         if (methodSignature.numberOfArguments == 2) {
