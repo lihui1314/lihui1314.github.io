@@ -7,7 +7,7 @@ excerpt: "GCD实现支持repeat、repeatCount的定时器，自动识别seletor�
 ###核心代码如下：
 
 ```
--(void)lh_setGCDtimerWithTimer:(dispatch_source_t)timer interval:(uint64_t)interval repeat:(BOOL)repeat repeatCount:(NSInteger)count sel:(SEL)sel{
+-(void)lh_setGCDtimerWithTimer:(dispatch_source_t)timer interval:(uint64_t)interval repeat:(BOOL)repeat repeatCountLimit:(NSInteger)count sel:(SEL)sel{
     if (timer == nil) {
         return;
     }
