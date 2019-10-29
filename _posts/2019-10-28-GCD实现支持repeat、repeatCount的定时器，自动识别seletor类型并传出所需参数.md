@@ -25,21 +25,23 @@ excerpt: "GCD实现支持设置repeat和repeat次数的定时器，能自动识�
     dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, interval*NSEC_PER_SEC, 0.1* NSEC_PER_SEC);
     __weak typeof(timer)wektimer = timer;
     __weak typeof(self)wekSelf = self;
+    NSMethodSignature *methodSignature = [[wekSelf class] instanceMethodSignatureForSelector:sel];
+    NSInteger numberOfArguments = methodSignature.numberOfArguments;
+    IMP imp = [wekSelf methodForSelector:sel];
     dispatch_source_set_event_handler(timer, ^{
         if (count > 0) {
             if (count - i == 0) {
                 dispatch_cancel(wektimer);
             }
         }
-        NSMethodSignature *methodSignature = [[wekSelf class] instanceMethodSignatureForSelector:sel];
-        if (methodSignature.numberOfArguments == 2) {
-            IMP imp = [wekSelf methodForSelector:sel];
+      
+        if (numberOfArguments == 2) {
+
             void (*func)(id, SEL) = (void *)imp;
             func(wekSelf,sel);
-        }else if (methodSignature.numberOfArguments == 3){
+        }else if (numberOfArguments == 3){
             const char* type = [methodSignature getArgumentTypeAtIndex:2];
             if (type[0] == 'q' || type[0] == 'i') {
-                IMP imp = [wekSelf methodForSelector:sel];
                 void (*func)(id, SEL,NSInteger) = (void *)imp;
                 func(wekSelf,sel,i);
             }
@@ -49,19 +51,16 @@ excerpt: "GCD实现支持设置repeat和repeat次数的定时器，能自动识�
                 func(wekSelf,sel,@{@"i":@(i),@"count":@(count)});
             }
             
-        }else if (methodSignature.numberOfArguments >3){
+        }else if (numberOfArguments >3){
             const char* typeF = [methodSignature getArgumentTypeAtIndex:2];
             const char* typeN = [methodSignature getArgumentTypeAtIndex:3];
             if ((typeF[0] == 'q' || typeF[0] == 'i' )&& (typeN[0] == 'q' || typeN[0] == 'i' ) ) {
-                IMP imp = [wekSelf methodForSelector:sel];
                 void (*func)(id, SEL,NSInteger,NSInteger) = (void *)imp;
                 func(wekSelf,sel,i,count);
             }else if (typeF[0] == '@' ){
-                IMP imp = [wekSelf methodForSelector:sel];
                 void (*func)(id, SEL,id) = (void *)imp;
                 func(wekSelf,sel,@{@"i":@(i),@"count":@(count)});
             }else if ((typeF[0] == 'i' || typeF[0] == 'q') &&((typeN[0]=='i')&&(typeN[0]!='q'))){
-                IMP imp = [wekSelf methodForSelector:sel];
                 void (*func)(id, SEL,NSInteger) = (void *)imp;
                 func(wekSelf,sel,i);
             }
