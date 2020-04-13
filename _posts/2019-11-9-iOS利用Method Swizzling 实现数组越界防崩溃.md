@@ -25,7 +25,6 @@ excerpt: "黑魔法"
 
 ```
 +(void)load{
-    [super load];
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSString* arrayZeroStr = @"__NSArray0"; //真身 NSArray*arr0 = [[NSArray alloc]init];
