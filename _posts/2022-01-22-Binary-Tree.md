@@ -145,7 +145,7 @@ struct Queue {
 
 struct Queue *creatQueue(void);
 bool queueIsEmpty(struct Queue *q);
-void queueAppend (struct Queue *queue, struct TreeNode *data);
+void queueAppend (struct Queue *queue, void *);
 void queueDelete (struct Queue *queue);
 ```
 
@@ -199,7 +199,7 @@ void queueDelete (struct Queue *queue) {
 void bfsTree(struct TreeNode *root) {
     struct Queue *q = creatQueue();
     queueAppend(q, root);
-    while (queueIsEmpty(q) != 1) {
+    while (!queueIsEmpty(q)) {
         struct TreeNode *node = q->front->data;
         printf("%d\n",node->val);
         if (node->left != NULL) {
