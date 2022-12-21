@@ -56,8 +56,6 @@ func getStringArray(@StringArrayBuilder _ content: ()->[String]) {
 
 ```
 
-#### 
-
 #### ViewBuilder都实现了哪些方法
 
 下面的api可以看到 ViewBuilder 支持了，条件语句还有版本判断（buildLimitedAvailability）。
