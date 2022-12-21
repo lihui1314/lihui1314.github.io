@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "SwiftUI之ViewBuilder"
-excerpt: "swiftUI是苹果推出的一种构建用户界面的声明式框架,它采用数据驱动的方式来构建界面"
+excerpt: "SwiftUI是苹果推出的一种构建用户界面的声明式框架,它采用数据驱动的方式来构建界面"
 ---
 ### ViewBuilder
 
-swiftUI是苹果推出的一种构建用户界面的声明式框架,它采用数据驱动的方式来构建界面。学了一段时间swiftUI，感觉这种写代码的方式还是挺好的。这里主要总结ViewBuilder。以及swift是如何实现swiftUI这种DSL的。
+swiftUI是苹果推出的一种构建用户界面的声明式框架,它采用数据驱动的方式来构建界面。学了一段时间SwiftUI，感觉这种写代码的方式还是挺好的。这里主要总结ViewBuilder。以及swift是如何实现swiftUI这种DSL的。
 
 首先看一段简单的代码：
 
