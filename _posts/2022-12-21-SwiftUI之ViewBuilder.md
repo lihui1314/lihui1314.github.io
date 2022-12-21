@@ -22,11 +22,11 @@ struct ContentView: View {
 
 #### @resultBuilder 结果构造器
 
-简单的说，结果构造起是可以将多个内容构建为一个结果，举个例子。
-
 + 一个结果构建器类型必须满足两个基本要求
   1. 它必须通过`@resultBuilder`进行标，并允许它作为一个自定义属性使用.
   2. 它必须至少实现一个名为`buildBlock`的类型方法
+  
+简单的说，结果构造起是可以将多个内容构建为一个结果，举个例子。
 
 ```swift
 struct ContentView: View {
