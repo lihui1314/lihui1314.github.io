@@ -5,7 +5,7 @@ excerpt: "当你在思考状的时候你在思考什么? 在宏观世界层面�
 ---
 当你在思考状的时候你在思考什么？
 
-在宏观世界层面（经典力学）状态可以是确定的  deterministic
+在宏观世界层面（经典力学、相对论）状态可以说是确定的  deterministic
 
 在微观世界层面（量子力学）还是确定的吗？ non-deterministic
 
@@ -44,7 +44,7 @@ enum State: Int{
     case STATE_BEGIN = 0
     case STATE_ONE = 1
     case STATE_TWO = 2
-    case STATE_TREE = 3
+    case STATE_THREE = 3
     case STATE_NONE
 }
 
@@ -63,7 +63,7 @@ enum CharType {
                 return false
             }
         }
-        if state == .STATE_TREE {
+        if state == .STATE_THREE {
             return true
         }
         return false
@@ -83,8 +83,8 @@ enum CharType {
         var map = [State:[CharType:State]]()
         map[.STATE_BEGIN] = [.C_TYPE_A: .STATE_ONE, .C_TYPE_B: .STATE_BEGIN]
         map[.STATE_ONE] = [.C_TYPE_A: .STATE_ONE, .C_TYPE_B: .STATE_TWO]
-        map[.STATE_TWO] = [.C_TYPE_A: .STATE_ONE, .C_TYPE_B: .STATE_TREE]
-        map[.STATE_TREE] = [.C_TYPE_A: .STATE_ONE, .C_TYPE_B: .STATE_BEGIN]
+        map[.STATE_TWO] = [.C_TYPE_A: .STATE_ONE, .C_TYPE_B: .STATE_THREE]
+        map[.STATE_THREE] = [.C_TYPE_A: .STATE_ONE, .C_TYPE_B: .STATE_BEGIN]
         if let dic =  map[state] {
             return dic[chareType] ?? .STATE_NONE
         }
