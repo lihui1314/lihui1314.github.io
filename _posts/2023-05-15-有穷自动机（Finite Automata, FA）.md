@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "有穷自动机（Finite Automata, FA"
+title: "有穷自动机（Finite Automata, FA)"
 excerpt: "当你在思考状的时候你在思考什么? 在宏观世界层面（经典力学）状态可以是确定的  deterministic, 在微观世界层面（量子力学）还是确定的吗？ non-deterministic"
 ---
-###有穷自动机（Finite Automata, FA）
-
 当你在思考状的时候你在思考什么？
 
 在宏观世界层面（经典力学）状态可以是确定的  deterministic
