@@ -58,7 +58,6 @@ enum CharType {
     func checkStr(_ str: String) -> Bool {
         var state:State = .STATE_BEGIN
         for c in  str {
-            print(c)
             state = stateMove(getCharType(c), state)
             if state == .STATE_NONE {
                 return false
