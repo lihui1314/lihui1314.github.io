@@ -51,7 +51,7 @@ enum State: Int{
 enum CharType {
     case C_TYPE_A
     case C_TYPE_B
-    case CT_TYPE_ILLEGAL
+    case C_TYPE_ILLEGAL
 }
 
 
@@ -76,7 +76,7 @@ enum CharType {
         if c == "b" {
             return .C_TYPE_B
         }
-        return .CT_TYPE_ILLEGAL
+        return .C_TYPE_ILLEGAL
     }
 
     func stateMove(_ chareType: CharType, _ state: State) -> State {
